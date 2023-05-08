@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
             read(p1p2[0], search_str, strlen(search_str) + 1);
             sprintf(argomento_grep, "(?<=ART. %d.)(?s).*(?=ART. %d.)", atoi(search_str), atoi(search_str + 1));
             execl("/usr/bin/grep", "grep", "-z", "-o", "-P", argomento_grep, argv[1], (char *)0);
-            return 0;
         }
     }
     close(p1p2[0]);
